@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+<title>統合占術レポート｜1971.04.24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Cardo:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1814;
+    --ink-soft:#3a342c;
+    --paper:#f4ede0;
+    --paper-deep:#ebe0cc;
+    --gold:#a8814a;
+    --gold-deep:#7a5a30;
+    --rouge:#8c3a3a;
+    --rouge-deep:#5e2424;
+    --sage:#6b7a5a;
+    --line:rgba(26,24,20,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
+  html,body{
+    background:#2a2620;
+    color:var(--ink);
+    font-family:'Shippori Mincho','Cardo',serif;
+    line-height:1.85;
+    font-feature-settings:"palt";
+    overflow-x:hidden;
+  }
+
+.page{
+width:100%;
+max-width:560px;
+margin:0 auto 16px;
+background:var(–paper);
+background-image:
+radial-gradient(ellipse at top left, rgba(168,129,74,0.08), transparent 50%),
+radial-gradient(ellipse at bottom right, rgba(140,58,58,0.06), transparent 50%),
+url(“data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.04 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>”);
+padding:48px 24px;
+position:relative;
+box-shadow:0 12px 40px rgba(0,0,0,0.4);
+}
+
+.page::before{
+content:””;
+position:absolute;
+inset:12px;
+border:1px solid var(–line);
+pointer-events:none;
+}
+.page::after{
+content:””;
+position:absolute;
+inset:16px;
+border-top:1px solid rgba(168,129,74,0.4);
+border-bottom:1px solid rgba(168,129,74,0.4);
+pointer-events:none;
+}
+
+/* ===== COVER ===== */
+.cover{padding:60px 24px 50px;text-align:center}
+.cover .glyph{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:13px;
+letter-spacing:0.4em;
+color:var(–gold-deep);
+text-transform:uppercase;
+margin-bottom:32px;
+}
+.cover h1{
+font-family:‘Shippori Mincho’,serif;
+font-weight:600;
+font-size:38px;
+letter-spacing:0.12em;
+line-height:1.4;
+margin-bottom:8px;
+color:var(–ink);
+}
+.cover h1 em{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-weight:400;
+color:var(–rouge-deep);
+font-size:46px;
+letter-spacing:0;
+}
+.cover .sub{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:18px;
+color:var(–ink-soft);
+margin-bottom:36px;
+letter-spacing:0.04em;
+line-height:1.5;
+}
+.cover .sigil{
+font-size:26px;
+color:var(–gold);
+margin:24px auto;
+letter-spacing:0.3em;
+}
+.cover .lead{
+font-family:‘Cardo’,serif;
+font-style:italic;
+font-size:14px;
+color:var(–ink-soft);
+margin:0 auto 28px;
+line-height:1.8;
+}
+.cover .meta{
+border:1px solid var(–gold);
+padding:18px 20px;
+margin-top:24px;
+background:rgba(244,237,224,0.6);
+}
+.cover .meta-row{
+display:flex;
+justify-content:space-between;
+gap:16px;
+font-size:13px;
+margin:6px 0;
+letter-spacing:0.05em;
+}
+.cover .meta-row span:first-child{
+color:var(–gold-deep);
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:13px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-num{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:64px;
+color:rgba(168,129,74,0.18);
+line-height:0.8;
+position:absolute;
+top:36px;
+right:28px;
+z-index:0;
+}
+.section-label{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:12px;
+letter-spacing:0.35em;
+color:var(–gold-deep);
+text-transform:uppercase;
+margin-bottom:6px;
+}
+h2.section-title{
+font-family:‘Shippori Mincho’,serif;
+font-weight:600;
+font-size:26px;
+letter-spacing:0.1em;
+line-height:1.4;
+margin-bottom:6px;
+color:var(–ink);
+position:relative;
+z-index:1;
+}
+.section-rule{
+width:48px;
+height:1px;
+background:var(–gold);
+margin:14px 0 24px;
+}
+
+/* ===== CONTENT BLOCKS ===== */
+.block{
+margin-bottom:24px;
+position:relative;
+z-index:1;
+}
+h3{
+font-family:‘Shippori Mincho’,serif;
+font-weight:600;
+font-size:16px;
+letter-spacing:0.12em;
+margin-bottom:10px;
+color:var(–rouge-deep);
+display:flex;
+align-items:center;
+gap:10px;
+}
+h3::before{
+content:””;
+width:18px;
+height:1px;
+background:var(–rouge-deep);
+flex-shrink:0;
+}
+
+ul.refined{
+list-style:none;
+padding-left:0;
+}
+ul.refined li{
+padding:9px 0 9px 18px;
+border-bottom:1px dashed var(–line);
+position:relative;
+font-size:13px;
+line-height:1.85;
+}
+ul.refined li:last-child{border-bottom:none}
+ul.refined li::before{
+content:“◆”;
+position:absolute;
+left:0;
+top:11px;
+color:var(–gold);
+font-size:9px;
+}
+ul.refined li strong{
+color:var(–ink);
+font-weight:600;
+letter-spacing:0.03em;
+}
+
+.quote{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:15px;
+color:var(–ink-soft);
+line-height:1.7;
+padding:16px 18px;
+border-left:2px solid var(–gold);
+background:rgba(168,129,74,0.06);
+margin:18px 0;
+}
+.quote strong{
+font-family:‘Shippori Mincho’,serif;
+font-style:normal;
+color:var(–ink);
+}
+
+p.intro{
+font-size:13px;
+line-height:1.95;
+margin:14px 0 24px;
+color:var(–ink-soft);
+}
+p.intro strong{color:var(–ink)}
+
+/* ===== KEYWORD BANNER ===== */
+.keyword-banner{
+background:linear-gradient(135deg,var(–rouge-deep) 0%,var(–rouge) 100%);
+color:var(–paper);
+padding:22px 22px;
+margin:22px 0;
+position:relative;
+overflow:hidden;
+}
+.keyword-banner::before{
+content:””;
+position:absolute;
+top:0;right:0;bottom:0;
+width:60px;
+background:linear-gradient(45deg,transparent 49%,rgba(244,237,224,0.15) 50%,transparent 51%);
+background-size:6px 6px;
+}
+.keyword-banner .kw-label{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:11px;
+letter-spacing:0.3em;
+opacity:0.7;
+margin-bottom:6px;
+}
+.keyword-banner .kw-title{
+font-family:‘Shippori Mincho’,serif;
+font-size:20px;
+font-weight:600;
+letter-spacing:0.06em;
+line-height:1.45;
+}
+.keyword-banner .kw-en{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:13px;
+margin-top:8px;
+opacity:0.85;
+line-height:1.5;
+}
+
+/* ===== DATA STRIP - vertical on mobile ===== */
+.data-strip{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:0;
+border:1px solid var(–line);
+margin:20px 0;
+}
+.data-strip > div{
+padding:14px 8px;
+text-align:center;
+border-right:1px solid var(–line);
+}
+.data-strip > div:last-child{border-right:none}
+.data-strip .ds-label{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:10px;
+letter-spacing:0.2em;
+color:var(–gold-deep);
+margin-bottom:5px;
+}
+.data-strip .ds-value{
+font-family:‘Shippori Mincho’,serif;
+font-size:13px;
+font-weight:600;
+letter-spacing:0.04em;
+color:var(–ink);
+line-height:1.4;
+}
+.data-strip .ds-en{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:10px;
+color:var(–ink-soft);
+margin-top:4px;
+line-height:1.3;
+}
+
+/* ===== LIFE STAGE ===== */
+.life-stage{
+border:1px solid var(–line);
+padding:18px 18px;
+margin-bottom:14px;
+background:rgba(255,255,255,0.3);
+position:relative;
+}
+.life-stage.peak{
+background:linear-gradient(135deg,rgba(168,129,74,0.18),rgba(140,58,58,0.08));
+border-color:var(–gold);
+}
+.life-stage-head{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:12px;
+padding-bottom:10px;
+border-bottom:1px solid var(–line);
+flex-wrap:wrap;
+gap:8px;
+}
+.life-age{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:24px;
+color:var(–ink);
+letter-spacing:0.04em;
+line-height:1.2;
+}
+.life-age small{
+font-size:11px;
+letter-spacing:0.2em;
+color:var(–gold-deep);
+margin-left:8px;
+font-style:normal;
+display:inline-block;
+}
+.stars{
+font-size:14px;
+letter-spacing:0.15em;
+color:var(–rouge);
+white-space:nowrap;
+}
+.stars .off{color:var(–line)}
+.life-theme{
+font-family:‘Shippori Mincho’,serif;
+font-size:14px;
+font-weight:600;
+color:var(–rouge-deep);
+letter-spacing:0.05em;
+margin-bottom:12px;
+line-height:1.5;
+}
+.life-stage dl{
+display:grid;
+grid-template-columns:64px 1fr;
+gap:6px 10px;
+font-size:12px;
+}
+.life-stage dt{
+color:var(–gold-deep);
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+letter-spacing:0.08em;
+font-size:10px;
+padding-top:3px;
+}
+.life-stage dd{line-height:1.7}
+
+/* ===== MONTHS - one column on mobile ===== */
+.month-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+}
+.month-card{
+border:1px solid var(–line);
+padding:14px 16px;
+background:rgba(255,255,255,0.35);
+position:relative;
+}
+.month-card.peak{
+background:linear-gradient(135deg,rgba(168,129,74,0.12),rgba(140,58,58,0.06));
+border-color:var(–gold);
+}
+.month-head{
+display:flex;
+justify-content:space-between;
+align-items:baseline;
+margin-bottom:8px;
+padding-bottom:6px;
+border-bottom:1px dotted var(–line);
+}
+.month-num{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:26px;
+line-height:1;
+color:var(–ink);
+}
+.month-num small{
+font-size:11px;
+color:var(–gold-deep);
+letter-spacing:0.2em;
+margin-left:5px;
+font-style:normal;
+}
+.month-stars{font-size:11px;color:var(–rouge);letter-spacing:0.1em}
+.month-stars .off{color:var(–line)}
+.month-theme{
+font-weight:600;
+font-size:13px;
+margin:6px 0;
+color:var(–rouge-deep);
+letter-spacing:0.04em;
+}
+.month-card p{font-size:11px;line-height:1.7;margin:3px 0}
+.month-card .label{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+color:var(–gold-deep);
+font-size:9px;
+letter-spacing:0.15em;
+display:inline-block;
+width:32px;
+}
+.month-advice{
+margin-top:8px;
+padding-top:6px;
+border-top:1px dotted var(–line);
+font-style:italic;
+font-family:‘Cardo’,serif;
+color:var(–ink-soft);
+font-size:11px;
+}
+
+/* ===== TWO COL → SINGLE COL on mobile ===== */
+.grid-2{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* ===== CLOSING ===== */
+.closing{
+text-align:center;
+padding:32px 18px;
+background:linear-gradient(180deg,rgba(168,129,74,0.08),rgba(140,58,58,0.05));
+border-top:1px solid var(–gold);
+border-bottom:1px solid var(–gold);
+margin-top:24px;
+}
+.closing .key{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:12px;
+letter-spacing:0.35em;
+color:var(–gold-deep);
+margin-bottom:18px;
+}
+.closing h2{
+font-family:‘Shippori Mincho’,serif;
+font-size:20px;
+font-weight:600;
+letter-spacing:0.07em;
+line-height:1.6;
+color:var(–ink);
+margin-bottom:20px;
+}
+.closing h2 em{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+color:var(–rouge-deep);
+font-weight:400;
+font-size:24px;
+display:block;
+margin-top:6px;
+}
+.closing p{
+font-size:13px;
+line-height:1.95;
+margin:0;
+}
+
+.glyph-deco{
+text-align:center;
+font-size:18px;
+color:var(–gold);
+letter-spacing:0.6em;
+margin:24px 0;
+opacity:0.6;
+}
+
+.final-message{
+margin-top:32px;
+text-align:center;
+}
+.final-message .label{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:12px;
+color:var(–gold-deep);
+letter-spacing:0.35em;
+margin-bottom:18px;
+}
+.final-message p{
+font-family:‘Shippori Mincho’,serif;
+font-size:14px;
+line-height:2;
+color:var(–ink);
+letter-spacing:0.04em;
+}
+.final-message em{
+color:var(–rouge-deep);
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:18px;
+display:block;
+margin:10px 0 4px;
+}
+.final-message .jp-final{
+font-size:13px;
+color:var(–ink-soft);
+}
+
+.signature{
+text-align:center;
+margin-top:24px;
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+color:var(–gold-deep);
+font-size:11px;
+letter-spacing:0.25em;
+line-height:1.8;
+}
+
+/* page footer */
+.page-footer{
+text-align:center;
+margin-top:30px;
+padding-top:14px;
+border-top:1px solid var(–line);
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:11px;
+letter-spacing:0.25em;
+color:var(–gold-deep);
+}
+.page-footer .num{
+display:inline-block;
+margin:0 10px;
+color:var(–ink);
+}
+
+/* tablet & up */
+@media (min-width:600px){
+.page{padding:64px 48px;margin-bottom:24px}
+.cover h1{font-size:54px}
+.cover h1 em{font-size:62px}
+h2.section-title{font-size:34px}
+.section-num{font-size:88px}
+ul.refined li{font-size:14px}
+.grid-2{grid-template-columns:1fr 1fr}
+.month-grid{grid-template-columns:1fr 1fr}
+}
+
+@media print {
+.page{margin:0;box-shadow:none;page-break-after:always}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+
+<section class="page cover">
+  <div class="glyph">— Astrological Synthesis —</div>
+  <h1>運命の<em>羅針盤</em></h1>
+  <div class="sub">Three Ancient Wisdoms,<br>One Soul Map</div>
+  <div class="sigil">☉ ☽ ♂ ♀ ♃</div>
+  <p class="lead">四柱推命・西洋占星術・インド占星術。<br>三つの叡智が描き出す、<br>あなただけの運命図。</p>
+
+  <div class="meta">
+    <div class="meta-row"><span>Birth</span><span>1971.04.24｜12:00</span></div>
+    <div class="meta-row"><span>Place</span><span>埼玉県</span></div>
+    <div class="meta-row"><span>Day Master</span><span>己土・陰</span></div>
+    <div class="meta-row"><span>Lagna</span><span>獅子座（ASC）</span></div>
+  </div>
+</section>
+
+<!-- ===================== ① 基本情報 ===================== -->
+
+<section class="page">
+  <div class="section-num">I</div>
+  <div class="section-label">Section One</div>
+  <h2 class="section-title">本質の輪郭</h2>
+  <div class="section-rule"></div>
+
+  <div class="keyword-banner">
+    <div class="kw-label">Your Archetype</div>
+    <div class="kw-title">静かな帝王 ─<br>大地に咲く、王の花</div>
+    <div class="kw-en">"The Quiet Sovereign — Royalty rooted in earth"</div>
+  </div>
+
+  <div class="data-strip">
+    <div>
+      <div class="ds-label">Bazi</div>
+      <div class="ds-value">己土・陰</div>
+      <div class="ds-en">soft earth</div>
+    </div>
+    <div>
+      <div class="ds-label">Sun</div>
+      <div class="ds-value">牡牛9H</div>
+      <div class="ds-en">Taurus</div>
+    </div>
+    <div>
+      <div class="ds-label">Vedic</div>
+      <div class="ds-value">三重高揚</div>
+      <div class="ds-en">3 exalted</div>
+    </div>
+  </div>
+
+  <p class="intro">三つの占術が同じ一つのことを告げています。<strong>「派手に立ち回らずとも、内側に王の力を秘めた人」</strong>。柔らかい土（己）の上に、太陽・火星・金星が高揚した稀有な配置。声を張らずに人を動かせる、本物の器の人です。</p>
+
+  <div class="block">
+    <h3>本質的な強み</h3>
+    <ul class="refined">
+      <li><strong>稀有な「3天体高揚」</strong>──太陽（自我）・火星（行動）・金星（美と愛）すべて最高の力を発揮する配置。一つでも珍しいものが3つ揃う、人生の太い軸。</li>
+      <li><strong>ヨガカーラカ火星＋ラージャヨーガ</strong>──地位・成功・権威を司る最強の組み合わせ。働くほどに格が上がるタイプ。</li>
+      <li><strong>太陽×水星のブダ・アディティヤ</strong>──知性と表現が一体化。話せば伝わる、書けば残る人。</li>
+      <li><strong>己土 × MC牡牛座10ハウス土星</strong>──地に足のついた現実構築力。一度築いたものは崩れない。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>弱点や課題</h3>
+    <ul class="refined">
+      <li><strong>月が「敵座」（牡羊座）</strong>──感情が先走り、満たされなさを抱えやすい。"やりたい"と"安心したい"が衝突する。</li>
+      <li><strong>土星減衰＋10ハウス</strong>──責任を一人で抱え込む癖。「私がやらねば」が口癖になりがち。</li>
+      <li><strong>水星×火星スクエア</strong>──頭の回転が速いぶん、言葉が刃になることがある。</li>
+      <li><strong>金星×冥王星オポジション</strong>──愛と支配の間で揺れる。執着しすぎる/されすぎる関係を繰り返しやすい。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>人生のテーマ</h3>
+    <div class="quote">"自分を犠牲にしないで、王座に座る"<br><strong>──奉仕と自立、献身と尊厳のバランスを取り戻す旅。</strong></div>
+    <p style="font-size:13px;line-height:1.9;">己土の人は本来「誰かのために」を生きがいにしますが、あなたの命式には王の星が3つも光っています。<strong>"与える"と"受け取る"を半々にできた瞬間、人生が完成形に向かいます。</strong></p>
+  </div>
+
+  <div class="page-footer"><span class="num">I</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ② 性格・本質 ===================== -->
+
+<section class="page">
+  <div class="section-num">II</div>
+  <div class="section-label">Section Two</div>
+  <h2 class="section-title">深層の地図</h2>
+  <div class="section-rule"></div>
+
+  <div class="block">
+    <h3>思考パターン</h3>
+    <ul class="refined">
+      <li><strong>9ハウスに太陽・月・水星集中</strong>──「意味」「真理」「大局」で物事を考える哲学者タイプ。雑談より本質的な対話を好む。</li>
+      <li><strong>水星牡羊座（逆行）</strong>──ひらめきは速いが、外に出す前に内側で何度も反芻。"考え抜いてから話す"。</li>
+      <li><strong>太陽×水星合</strong>──自分の考えを言語化する力が高い。書くこと・教えることに才能。</li>
+      <li>結論ファースト。前置きの長い人にはイライラしやすい。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>感情のクセ</h3>
+    <ul class="refined">
+      <li><strong>月が牡羊座9ハウス＋敵座</strong>──感情の動きが瞬発的で、自分でも追いつかない。「気づいたら言葉が出ていた」を繰り返す。</li>
+      <li><strong>月×木星×海王星</strong>──理想と現実のギャップに揺れる。"こうあるべき"が強い。</li>
+      <li>怒りより<strong>"失望"が深く刺さる</strong>タイプ。期待値の管理が幸福度を左右する。</li>
+      <li>一人になる時間がないと壊れる。"安全な巣"の確保が最優先課題。</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <h3>対人関係</h3>
+      <ul class="refined">
+        <li>ASC獅子座──第一印象は華やか・堂々。実際より強く見られる。</li>
+        <li>狭く深く。気を許す相手は片手で足りる。</li>
+        <li>頼られると断れず、抱え込んで疲弊する。</li>
+        <li>嘘・薄情に対する許容度は低い。一度見限ると戻らない。</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>恋愛傾向</h3>
+      <ul class="refined">
+        <li>金星牡羊座8ハウス＋高揚──恋に全振りする深さ。</li>
+        <li>金星×冥王星オポジション──強い感情を持つ相手に惹かれる。</li>
+        <li>金星×木星トライン──愛する力そのものは大きく、与える側に。</li>
+        <li>"対等"が成立しないと冷める。下に置かれると逃げる。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote">あなたの中には"優しい大地"と"剣を持つ女王"が同居しています。<br><strong>どちらも本物。どちらも手放さなくていい。</strong></div>
+
+  <div class="page-footer"><span class="num">II</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ③ 人生グラフ・前半 ===================== -->
+
+<section class="page">
+  <div class="section-num">III</div>
+  <div class="section-label">Section Three</div>
+  <h2 class="section-title">人生の地形図<br><span style="font-size:14px;color:var(--gold-deep);font-weight:400;letter-spacing:0.1em">─ 0歳から50歳まで ─</span></h2>
+  <div class="section-rule"></div>
+
+  <p class="intro" style="font-style:italic;font-family:'Cardo',serif">※四柱推命の大運（10年単位）と、インド占星術のマハダシャー（惑星周期）を統合した運気推移。</p>
+
+  <!-- 0-7 -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">0 — 7<small>幼少期</small></div>
+      <div class="stars">★★★<span class="off">★★</span></div>
+    </div>
+    <div class="life-theme">水星マハダシャ｜種が地中で発芽する時期</div>
+    <dl>
+      <dt>THEME</dt><dd>知的好奇心の芽吹き／早熟さの始まり</dd>
+      <dt>EVENTS</dt><dd>言葉が早い、本好き、転居や環境変化を経験。家族内の感情を読みすぎて、子どもらしくいられない場面も。</dd>
+      <dt>FOCUS</dt><dd>"いい子"を頑張りすぎないこと。この時期の「察する力」が後の財産になる。</dd>
+    </dl>
+  </div>
+
+  <!-- 7-27 -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">7 — 27<small>修練期</small></div>
+      <div class="stars">★★★<span class="off">★★</span></div>
+    </div>
+    <div class="life-theme">ケートゥ→金星MD前期｜試練と魅力の同居</div>
+    <dl>
+      <dt>THEME</dt><dd>"自分とは何か"を激しく問う20年。挫折と魅力開花が同時進行。</dd>
+      <dt>EVENTS</dt><dd>10代後半〜20代前半に進路・人間関係の大きな選択。恋愛は早熟で深い。20代半ばで一度"自分の形"が壊れる体験。</dd>
+      <dt>FOCUS</dt><dd>挫折＝失敗ではなく素材集め。この時期の傷の深さが、後年の説得力になる。</dd>
+    </dl>
+  </div>
+
+  <!-- 27-33 -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">27 — 33<small>転換期</small></div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="life-theme">金星MD後半｜美と愛の収穫期</div>
+    <dl>
+      <dt>THEME</dt><dd>結婚・出産・大きな関係の節目。創造力が一気に開花。</dd>
+      <dt>EVENTS</dt><dd>サターンリターン（28-30歳）で人生の選択を強いられる。仕事・パートナー・住む場所のいずれかが大きく動く。</dd>
+      <dt>FOCUS</dt><dd>"周りに合わせる選択"を止める節目。自分の意思で選んだものだけが、後で財産になる。</dd>
+    </dl>
+  </div>
+
+  <!-- 33-43 -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">33 — 43<small>築城期</small></div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="life-theme">大運「丙申」＋太陽MD→月MD｜地位と居場所の構築</div>
+    <dl>
+      <dt>THEME</dt><dd>仕事・家庭・社会的役割。"あなたの城"を築く10年。</dd>
+      <dt>EVENTS</dt><dd>役職・専門性の確立。後輩や子どもを育てる立場に。経済的基盤が固まる一方、心身の疲労ピーク。</dd>
+      <dt>FOCUS</dt><dd>"全部やる"を手放す。任せる勇気が次の扉を開ける。健康投資はこの時期の最良のリターン。</dd>
+    </dl>
+  </div>
+
+  <!-- 43-50 -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">43 — 50<small>再編期</small></div>
+      <div class="stars">★★★<span class="off">★★</span></div>
+    </div>
+    <div class="life-theme">大運「丁酉」｜剥がして整える時期</div>
+    <dl>
+      <dt>THEME</dt><dd>関係・役割・価値観の大掃除。「もう要らないもの」が浮き彫りに。</dd>
+      <dt>EVENTS</dt><dd>40代後半に深い喪失または転機。長年の関係の終わりや、健康・仕事の見直し。一見ネガティブに見えて、後の自由を作る期間。</dd>
+      <dt>FOCUS</dt><dd>抵抗するほど痛みは長引く。"流れに乗って手放す"が最良の戦略。</dd>
+    </dl>
+  </div>
+
+  <div class="page-footer"><span class="num">III</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ③-2 人生グラフ・後半（NEW） ===================== -->
+
+<section class="page">
+  <div class="section-num">III<span style="font-size:32px">·</span>2</div>
+  <div class="section-label">Section Three — Part Two</div>
+  <h2 class="section-title">本領発揮の<br>四半世紀<br><span style="font-size:14px;color:var(--gold-deep);font-weight:400;letter-spacing:0.1em">─ 50歳から、ここから ─</span></h2>
+  <div class="section-rule"></div>
+
+  <div class="keyword-banner" style="background:linear-gradient(135deg,var(--gold-deep),var(--gold))">
+    <div class="kw-label">Second Half Of Life</div>
+    <div class="kw-title">あなたの人生は<br>50歳から本物になる</div>
+    <div class="kw-en">Rahu MD 18yrs → Jupiter MD 16yrs<br>3天体高揚の真価が出る年代</div>
+  </div>
+
+  <!-- 50-55 -->
+
+  <div class="life-stage peak">
+    <div class="life-stage-head">
+      <div class="life-age">50 — 55<small>離陸期</small></div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="life-theme">大運「丁酉」末→「戊戌」初／火星MD最終章＋ラーフMD始動</div>
+    <dl>
+      <dt>THEME</dt><dd>長く積み上げてきたものに「名前」がつく時期。<br>あなたが何者かが、世間にも見え始める。</dd>
+      <dt>EVENTS</dt><dd>2026〜2027年の転換が最大の山場。新しい肩書き・役割・取引先・住居・人間関係が一気に動く。30〜40代に蒔いた種が芽を出し、想定外の方向から声がかかる。</dd>
+      <dt>FOCUS</dt><dd>"昔の自分"に戻ろうとしないこと。<br>遠慮はもう、誰も得をさせない。脱皮の時。</dd>
+      <dt>RISK</dt><dd>チャンス過多で消耗しやすい。"NO"を言う筋力を鍛える。</dd>
+    </dl>
+  </div>
+
+  <!-- 55-65 -->
+
+  <div class="life-stage peak">
+    <div class="life-stage-head">
+      <div class="life-age">55 — 65<small>飛翔期</small></div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="life-theme">大運「戊戌」｜ラーフMD本格化｜<strong>人生最大の追い風</strong></div>
+    <dl>
+      <dt>THEME</dt><dd><strong>人生の主役の10年。</strong>これまで生きてきた全てが、ここで報われる。</dd>
+      <dt>EVENTS</dt><dd>社会的地位・知名度・収入のいずれかで階段を一段以上上がる。著作・発信・プロジェクトが世に届く。海外・新領域・デジタルなど、これまで縁のなかった世界とつながる。教え子・後継者の存在が大きくなる。</dd>
+      <dt>FOCUS</dt><dd>「私なんて」を完全封印。<br>あなたの言葉と存在が、若い世代の道標になる時期。<strong>表に出るほど運が来る。</strong></dd>
+      <dt>RISK</dt><dd>急に増える縁の中に"質の悪いもの"が混じる。直感を信じる。</dd>
+    </dl>
+  </div>
+
+  <!-- 65-75 -->
+
+  <div class="life-stage peak">
+    <div class="life-stage-head">
+      <div class="life-age">65 — 75<small>結実期</small></div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="life-theme">大運「己亥」｜ラーフMD後半→木星MD（2045〜）｜叡智の時代</div>
+    <dl>
+      <dt>THEME</dt><dd>派手な拡大から、<strong>深さと格</strong>へ。<br>"何を持つか"ではなく"誰であるか"で評価される段階。</dd>
+      <dt>EVENTS</dt><dd>人生の総まとめが始まる。長年の活動が形になる（本・賞・後継者・遺すもの）。木星MD入りで、精神的・哲学的な探求が深まる。家族・コミュニティの精神的な核に。</dd>
+      <dt>FOCUS</dt><dd>「次世代に渡すもの」を意識する。<br>あなたが歩いた道は、誰かの地図になる。</dd>
+      <dt>RISK</dt><dd>身体の不調が出やすい。胃・関節・血糖値。早めの対処を。</dd>
+    </dl>
+  </div>
+
+  <!-- 75+ -->
+
+  <div class="life-stage">
+    <div class="life-stage-head">
+      <div class="life-age">75 +<small>賢者期</small></div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="life-theme">大運「庚子」｜木星MD完成期｜静かな威厳の時代</div>
+    <dl>
+      <dt>THEME</dt><dd>"存在しているだけで意味がある"段階。<br>動かなくても、影響を与え続ける人。</dd>
+      <dt>EVENTS</dt><dd>大きな活動より、信頼する人々との深い時間が中心に。これまでの作品・教え・人脈が"残るもの"として完成。家族関係の和解と統合。精神的な静けさと充実。</dd>
+      <dt>FOCUS</dt><dd>"何もしない"ことを罪にしない。<br>己土の人は、最後は静かに大地に還る。それが完成形。</dd>
+      <dt>RISK</dt><dd>孤独感に飲まれない工夫を。深い友人2〜3人を保つ。</dd>
+    </dl>
+  </div>
+
+  <div class="quote" style="margin-top:24px"><strong>50歳以降のあなたを、若い頃の物差しで測らないでください。</strong>あなたの命式は、後半戦のために作られた設計図です。</div>
+
+  <div class="page-footer"><span class="num">III·2</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ④ 2026年カレンダー ===================== -->
+
+<section class="page">
+  <div class="section-num">IV</div>
+  <div class="section-label">Section Four</div>
+  <h2 class="section-title">2026年｜月別運気</h2>
+  <div class="section-rule"></div>
+
+  <div class="keyword-banner" style="background:linear-gradient(135deg,var(--gold-deep),var(--gold))">
+    <div class="kw-label">2026 Annual Theme</div>
+    <div class="kw-title">受け取る年。<br>「もう頑張らない」が合言葉。</div>
+    <div class="kw-en">流年「丙午」＝印綬・建禄／火星MD×金星AD（高揚）</div>
+  </div>
+
+  <p class="intro">2026年の流年「丙午」は<strong>印綬・建禄</strong>──知性・名誉・支援を受け取る最高クラスの組み合わせ。さらにインド占星術では4月までヴィーナス（高揚）期、6月以降は太陽（高揚）期。<strong style="color:var(--rouge-deep)">"3天体高揚"の本領が炸裂する一年。</strong></p>
+
+  <div class="month-grid">
+    <div class="month-card">
+      <div class="month-head"><div class="month-num">01<small>JAN</small></div><div class="month-stars">★★★<span class="off">★★</span></div></div>
+      <div class="month-theme">仕込みと整理</div>
+      <p><span class="label">DO</span>古いデータ・関係の整理／健康診断</p>
+      <p><span class="label">AVOID</span>大きな決断・契約は避ける</p>
+      <div class="month-advice">"片付けが一番の開運"</div>
+    </div>
+
+```
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">02<small>FEB</small></div><div class="month-stars">★★★★<span class="off">★</span></div></div>
+  <div class="month-theme">小さな突破口</div>
+  <p><span class="label">DO</span>新しい人と会う／企画書を出す</p>
+  <p><span class="label">AVOID</span>過去の嫌な相手との再会</p>
+  <div class="month-advice">"直感で動いて正解"</div>
+</div>
+
+<div class="month-card">
+  <div class="month-head"><div class="month-num">03<small>MAR</small></div><div class="month-stars">★★★<span class="off">★★</span></div></div>
+  <div class="month-theme">人間関係の再編</div>
+  <p><span class="label">DO</span>誤解を解く／本音の対話</p>
+  <p><span class="label">AVOID</span>感情的な反応・SNS発言</p>
+  <div class="month-advice">"言いすぎより、聞きすぎる月"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">04<small>APR</small></div><div class="month-stars">★★★★★</div></div>
+  <div class="month-theme">誕生月＝ピーク前夜</div>
+  <p><span class="label">DO</span>美容投資／自分への贈り物</p>
+  <p><span class="label">AVOID</span>遠慮・"私なんて"の思考</p>
+  <div class="month-advice">"主役席に座る練習を"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">05<small>MAY</small></div><div class="month-stars">★★★★★</div></div>
+  <div class="month-theme">最大運気・本命月</div>
+  <p><span class="label">DO</span>勝負どころ／告白／提案／引っ越し</p>
+  <p><span class="label">AVOID</span>動かないこと自体がリスク</p>
+  <div class="month-advice">"今年の決め手はここで打つ"</div>
+</div>
+
+<div class="month-card">
+  <div class="month-head"><div class="month-num">06<small>JUN</small></div><div class="month-stars">★★★<span class="off">★★</span></div></div>
+  <div class="month-theme">移行期・休息</div>
+  <p><span class="label">DO</span>旅・温泉・自然に触れる</p>
+  <p><span class="label">AVOID</span>無理な人付き合い</p>
+  <div class="month-advice">"バッテリーを充電する月"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">07<small>JUL</small></div><div class="month-stars">★★★★<span class="off">★</span></div></div>
+  <div class="month-theme">名誉と評価</div>
+  <p><span class="label">DO</span>表に出る／登壇・取材を受ける</p>
+  <p><span class="label">AVOID</span>謙遜のしすぎ</p>
+  <div class="month-advice">"褒められたら『ありがとう』だけ"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">08<small>AUG</small></div><div class="month-stars">★★★★<span class="off">★</span></div></div>
+  <div class="month-theme">創造と表現</div>
+  <p><span class="label">DO</span>アウトプット／作品作り／発信</p>
+  <p><span class="label">AVOID</span>感情の起伏に飲まれる</p>
+  <div class="month-advice">"作ったものが資産になる"</div>
+</div>
+
+<div class="month-card">
+  <div class="month-head"><div class="month-num">09<small>SEP</small></div><div class="month-stars">★★★<span class="off">★★</span></div></div>
+  <div class="month-theme">健康と内省</div>
+  <p><span class="label">DO</span>食事・睡眠の見直し</p>
+  <p><span class="label">AVOID</span>夜更かし／甘いもの過剰</p>
+  <div class="month-advice">"身体の声を聞き返す月"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">10<small>OCT</small></div><div class="month-stars">★★★★<span class="off">★</span></div></div>
+  <div class="month-theme">パートナーシップ</div>
+  <p><span class="label">DO</span>協業・契約／重要な対話</p>
+  <p><span class="label">AVOID</span>一人で抱え込む</p>
+  <div class="month-advice">"頼ることも才能のうち"</div>
+</div>
+
+<div class="month-card">
+  <div class="month-head"><div class="month-num">11<small>NOV</small></div><div class="month-stars">★★★<span class="off">★★</span></div></div>
+  <div class="month-theme">深い変容</div>
+  <p><span class="label">DO</span>古い思考パターンの書き換え</p>
+  <p><span class="label">AVOID</span>過去の傷の蒸し返し</p>
+  <div class="month-advice">"許すは、忘れることではない"</div>
+</div>
+
+<div class="month-card peak">
+  <div class="month-head"><div class="month-num">12<small>DEC</small></div><div class="month-stars">★★★★<span class="off">★</span></div></div>
+  <div class="month-theme">来年への布石</div>
+  <p><span class="label">DO</span>ビジョンを書き出す／投資の準備</p>
+  <p><span class="label">AVOID</span>惰性での年越し</p>
+  <div class="month-advice">"ラーフ期前夜、種をまく月"</div>
+</div>
+```
+
+  </div>
+
+  <div class="page-footer"><span class="num">IV</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ⑤ 仕事 ===================== -->
+
+<section class="page">
+  <div class="section-num">V</div>
+  <div class="section-label">Section Five</div>
+  <h2 class="section-title">才能の発火点</h2>
+  <div class="section-rule"></div>
+
+  <div class="keyword-banner">
+    <div class="kw-label">Career DNA</div>
+    <div class="kw-title">"知性で稼ぎ、<br>信頼で積み上げる人"</div>
+    <div class="kw-en">Mercury 9H × Saturn 10H × Mars Yogakaraka</div>
+  </div>
+
+  <div class="block">
+    <h3>向いている職種</h3>
+    <ul class="refined">
+      <li><strong>知識・教育・出版系</strong>──講師、執筆、編集、コンサル、研修。9ハウス太陽月水星集中＋アマラキールティヨーガが援護。</li>
+      <li><strong>専門職・士業</strong>──法律・会計・医療・心理。土星10ハウスは「苦労して身につけた専門性で立つ」配置。</li>
+      <li><strong>美・癒し・芸術系</strong>──金星高揚＋8ハウス。深い感情に触れる仕事（カウンセリング、美容、ヒーリング、デザイン）に適性。</li>
+      <li><strong>経営者・指導者ポジション</strong>──ラージャヨーガ＋ヨガカーラカ火星。<strong>50代以降は組織のトップに立つ星。</strong></li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>稼ぎ方の特徴</h3>
+    <ul class="refined">
+      <li><strong>"派手な成功"より"積み上げ型"</strong>。爆発的というより、年々収入レンジが上がっていく。</li>
+      <li>会社員より<strong>独立・専門家ポジション</strong>のほうが本領発揮。ただし「実績を積んでから独立」が正解。</li>
+      <li>金運の鍵は<strong>「教える」「書く」「整える」</strong>──この3つに直接関わる仕事ほど稼げる。</li>
+      <li>2027年〜のラーフ大運で<strong>これまでなかった収入の流れ</strong>が始まる。新領域・デジタル・海外がキーワード。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>成功パターン</h3>
+    <div class="quote">最初の10年は地味に種まき → 次の10年で名前が知られ始める → <strong>50代以降に一気に立場が上がる。</strong>このリズムを信じられる人ほど、本物の実りを得る。</div>
+    <ul class="refined">
+      <li>"早く成果を"を捨てる。土星減衰の人は5年単位で動く。</li>
+      <li>競合と争うより<strong>"自分の専門領域"を独占</strong>する戦略が合う。</li>
+      <li>後輩・教え子を育てるほど自分の格が上がる構造。</li>
+    </ul>
+  </div>
+
+  <div class="page-footer"><span class="num">V</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ⑥ 恋愛・結婚 ===================== -->
+
+<section class="page">
+  <div class="section-num">VI</div>
+  <div class="section-label">Section Six</div>
+  <h2 class="section-title">愛の磁場</h2>
+  <div class="section-rule"></div>
+
+  <div class="data-strip">
+    <div>
+      <div class="ds-label">Venus</div>
+      <div class="ds-value">牡羊・8H<br>高揚</div>
+      <div class="ds-en">all-or-nothing</div>
+    </div>
+    <div>
+      <div class="ds-label">Mars</div>
+      <div class="ds-value">山羊座<br>高揚</div>
+      <div class="ds-en">long-term</div>
+    </div>
+    <div>
+      <div class="ds-label">7H Lord</div>
+      <div class="ds-value">土星<br>減衰</div>
+      <div class="ds-en">slow but lasting</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>恋愛スタイル</h3>
+    <ul class="refined">
+      <li><strong>"全か無か"の深い愛</strong>──金星高揚×8ハウス。中途半端な恋ができない。一度好きになると沼。</li>
+      <li><strong>第一印象は強気・実は繊細</strong>──ASC獅子座＋月牡羊座。気が強く見えて、内側はガラス。</li>
+      <li><strong>追われるより追いたい派</strong>──金星牡羊座は能動的な愛。受け身でいられない。</li>
+      <li><strong>恋愛＝精神的契約</strong>──軽い遊びは消耗するだけ。本気の関係でないと自分が成り立たない。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>相性の良いタイプ</h3>
+    <ul class="refined">
+      <li><strong>知性で会話できる人</strong>（必須）──9ハウス集中。話が合わない相手は最初から無理。</li>
+      <li><strong>自分の世界を持っている人</strong>──寄りかかってくるタイプは疲れる。背中合わせで立てる相手。</li>
+      <li><strong>蠍座／山羊座／乙女座</strong>──土の安定と水の深さ。太陽or月がこれらの星座の人。</li>
+      <li><strong>逆にNG</strong>──優柔不断、嘘の多い人、感情表現の薄い人。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>注意点</h3>
+    <ul class="refined">
+      <li><strong>金星×冥王星オポジション</strong>──"運命的"を求めすぎて、執着・支配の関係に陥りやすい。情熱と執着の境界線を持つ。</li>
+      <li><strong>7ハウス土星減衰</strong>──"我慢して関係を続ける"癖。違和感は早めに口に出す。</li>
+      <li><strong>結婚運は晩年型</strong>──30代より40代以降のほうが安定する関係を築ける。今からでも遅くない、むしろこれから。</li>
+      <li>パートナーに"親代わり"を求めない。あなたはもう一人で立っている。</li>
+    </ul>
+  </div>
+
+  <div class="quote">愛されたいなら、まず<strong>「私を雑に扱う人と一緒にいない」</strong>を徹底する。あなたの星は、扱いの質で運気が変わる。</div>
+
+  <div class="page-footer"><span class="num">VI</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ⑦ 開運アクション ===================== -->
+
+<section class="page">
+  <div class="section-num">VII</div>
+  <div class="section-label">Section Seven</div>
+  <h2 class="section-title">運命を磨く所作</h2>
+  <div class="section-rule"></div>
+
+  <div class="grid-2">
+    <div class="block">
+      <h3>今すぐやるべきこと</h3>
+      <ul class="refined">
+        <li><strong>「もう要らないもの」を10個捨てる</strong>──土星減衰には"放出"が薬。</li>
+        <li><strong>SNS・LINEの友人リスト整理</strong>──エネルギーを吸う相手を物理的に減らす。</li>
+        <li><strong>5月までに何か一つ"宣言"する</strong>──最大運期にビジョンを言語化。</li>
+        <li><strong>健康診断と歯のケア</strong>──土の人は口・胃・関節がサイン。</li>
+        <li><strong>名刺・プロフィール写真の更新</strong>──"見せ方"を変えるとチャンスが変わる。</li>
+      </ul>
+    </div>
+
+```
+<div class="block">
+  <h3>運気を上げる習慣</h3>
+  <ul class="refined">
+    <li><strong>朝の太陽光5分</strong>──太陽高揚の人は朝日が栄養。</li>
+    <li><strong>白・赤・金の小物</strong>──ラッキーカラー。バッグに何か一つ。</li>
+    <li><strong>週1で美術館・神社・図書館</strong>──9ハウスの人は"高い場所"でリセット。</li>
+    <li><strong>赤い口紅／金のアクセサリー</strong>──金星高揚の燃料。</li>
+    <li><strong>月1回、自分のためだけに食事</strong>──"私のために整える時間"が運気の核。</li>
+  </ul>
+</div>
+```
+
+  </div>
+
+  <div class="block" style="margin-top:18px">
+    <h3>避けるべきこと</h3>
+    <ul class="refined">
+      <li><strong>"私が我慢すれば"の思考</strong>──土星減衰の最大の罠。</li>
+      <li><strong>占い・スピへの依存</strong>（皮肉ですが）──9ハウス強の人は答えを外に求めがち。最終決定は自分で。</li>
+      <li><strong>夜遅くまでの仕事</strong>──火星山羊座は無限に働けるが、月が壊れる。</li>
+      <li><strong>愚痴の多い人との長時間</strong>──土の人はネガを吸い込みやすい。</li>
+    </ul>
+  </div>
+
+  <div class="glyph-deco">☉ ⚸ ☽ ⚸ ♀ ⚸ ♂ ⚸ ♃</div>
+
+  <div class="page-footer"><span class="num">VII</span>•<span class="num">VIII</span></div>
+</section>
+
+<!-- ===================== ⑧ 総まとめ ===================== -->
+
+<section class="page">
+  <div class="section-num">VIII</div>
+  <div class="section-label">Section Eight</div>
+  <h2 class="section-title">運命への一筆</h2>
+  <div class="section-rule"></div>
+
+  <div class="closing">
+    <div class="key">— Your Final Compass —</div>
+    <h2>あなたの人生の方向性は、<em>"ゆっくり、確実に、王座へ"</em></h2>
+    <p>あなたは派手な才能の持ち主ではありません。<br>けれど、3天体高揚という<strong>稀有な"質の高さ"</strong>を持っています。これは、駆け足では決して到達できない場所への切符。<br><br>50代以降にこそ本領を発揮するあなたにとって、今までの遠回りはすべて<strong>「土を耕す時間」</strong>でした。<br>そして2026年から始まるラーフ大運18年で、その土に根を張った大樹が、ついに花を咲かせます。</p>
+  </div>
+
+  <div class="final-message">
+    <div class="label">— A Message For You —</div>
+    <p>
+      もう、誰かのために生きるのは終わりにしていい。<br>
+      あなたが自分のために選ぶ時、<br>
+      不思議と周りの人も幸せになる構造になっています。
+      <em>"You are the sovereign of<br>your own life."</em>
+      <span class="jp-final">あなたは、あなたの人生の女王です。</span>
+    </p>
+  </div>
+
+  <div class="glyph-deco" style="margin-top:32px">☉ ☽ ♀ ♂ ♃ ♄</div>
+
+  <div class="signature">
+    Integrated Astrological Reading<br>
+    四柱推命 ✦ 西洋占星術 ✦ Jyotish<br>
+    1971.04.24 — Saitama
+  </div>
+
+  <div class="page-footer"><span class="num">VIII</span>•<span class="num">VIII</span></div>
+</section>
+
+</body>
+</html>
